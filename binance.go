@@ -119,6 +119,7 @@ func reqBinanceLast(sym string) ([]*Kline, error) {
 	if err := json.Unmarshal(bts, &inters); err != nil {
 		return nil, err
 	}
+	
 	// =================================================
 	for _, v := range inters {
 		kl := Kline{}
@@ -132,5 +133,6 @@ func reqBinanceLast(sym string) ([]*Kline, error) {
 		list = append(list, &kl)
 	}
 	// =================================================
+
 	return list, nil
 }
